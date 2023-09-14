@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleIdentifier</key>
-	<string><!-- VALUE --></string>
+	<string>gnutexinfo</string>
 	<key>CFBundleName</key>
-	<string><!-- VALUE --></string>
+	<string>GNU Texinfo</string>
 	<key>DocSetPlatformFamily</key>
-	<string><!-- VALUE --></string>
+	<string>texinfo</string>
 	<key>isDashDocset</key>
 	<true/>
 </dict>

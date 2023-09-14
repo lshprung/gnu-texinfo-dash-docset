@@ -13,6 +13,7 @@ get_title() {
 
 	pup -p -f "$FILE" 'title text{}' | \
 		tr -d \\n | \
+		sed 's/(GNU[^)]*)$//' | \
 		sed 's/\"/\"\"/g'
 }
 
