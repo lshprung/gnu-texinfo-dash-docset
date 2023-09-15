@@ -5,17 +5,13 @@
 # shellcheck source=./lib/insert
 . "$(dirname "$0")"/lib/insert
 
-DB_PATH="$1"
+CALLER="$1"
 shift
 
-get_title() {
-	FILE="$1"
+. "$(dirname "$0")"/"$CALLER"/get_title
 
-	pup -p -f "$FILE" 'title text{}' | \
-		tr -d \\n | \
-		sed 's/ (GNU[^)]*)$//' | \
-		sed 's/\"/\"\"/g'
-}
+DB_PATH="$1"
+shift
 
 insert_pages() {
 	# Get title and insert into table for each html file

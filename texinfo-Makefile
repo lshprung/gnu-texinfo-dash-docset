@@ -1,4 +1,5 @@
 DOCSET_NAME = GNU_Texinfo
+SIMPLE_NAME = texinfo
 
 DOCSET_DIR    = $(DOCSET_NAME).docset
 CONTENTS_DIR  = $(DOCSET_DIR)/Contents
@@ -11,7 +12,7 @@ ICON_FILE       = $(DOCSET_DIR)/icon.png
 ARCHIVE_FILE    = $(DOCSET_NAME).tgz
 
 SRC_ICON = src/icon.png
-SRC_PLIST = src/texinfo/Info.plist
+SRC_PLIST = src/$(SIMPLE_NAME)/Info.plist
 PAGE_INDEXING_SCRIPT = src/index-page.sh
 TERM_INDEXING_SCRIPT = src/index-terms.sh
 
@@ -76,7 +77,7 @@ $(INFO_PLIST_FILE): $(SRC_PLIST) $(CONTENTS_DIR)
 
 $(INDEX_FILE): $(PAGE_INDEXING_SCRIPT) $(TERM_INDEXING_SCRIPT) $(DOCUMENTS_DIR)
 	rm -f $@
-	$(PAGE_INDEXING_SCRIPT) $@ $(DOCUMENTS_DIR)/*.html
+	$(PAGE_INDEXING_SCRIPT) $(SIMPLE_NAME) $@ $(DOCUMENTS_DIR)/*.html
 	$(TERM_INDEXING_SCRIPT) Command $@ $(DOCUMENTS_DIR)/Command-and-Variable-Index.html
 	$(TERM_INDEXING_SCRIPT) Entry $@ $(DOCUMENTS_DIR)/General-Index.html
 

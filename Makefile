@@ -11,3 +11,7 @@ info-reader:
 clean:
 	$(MAKE) clean -f texinfo-Makefile
 	$(MAKE) clean -f info-reader-Makefile
+
+.PHONY: dist-clean
+dist-clean: clean
+	rm -rf tmp
